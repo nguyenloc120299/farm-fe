@@ -39,7 +39,10 @@ const TilesStyled = styled(DivStyled)`
     }
     &.bottom-corner2{
          background: url("/assets/images/land/dirt/bottom-corner2.png");
-            background-size: contain !important;
+            background-size: cover !important;
+    }
+    &.top-corner{
+        background: url("/assets/images/land/dirt/top-corner.png");
     }
 `
 const Tiles = () => {
@@ -243,7 +246,37 @@ const Tiles = () => {
                 style={{ gridColumn: "7", gridRow: "2" }}
             />
             <TilesStyled className='top-edge'
+                style={{ gridColumn: "8", gridRow: "2" }}
+            />
+            <TilesStyled className='top-edge'
+                style={{ gridColumn: "9", gridRow: "2" }}
+            />
+            <TilesStyled className='top-edge'
                 style={{ gridColumn: "10", gridRow: "8" }}
+            />
+            <TilesStyled className='top-edge'
+                style={{ gridColumn: "11", gridRow: "2" }}
+            />
+            <TilesStyled className='top-edge'
+                style={{ gridColumn: "10", gridRow: "2" }}
+            />
+            <TilesStyled className='top-edge'
+                style={{ gridColumn: "12", gridRow: "2" }}
+            />
+            <TilesStyled className='top-edge'
+                style={{ gridColumn: "14", gridRow: "2" }}
+            />
+            <TilesStyled className='top-edge'
+                style={{ gridColumn: "15", gridRow: "2" }}
+            />
+            <TilesStyled className='top-edge'
+                style={{ gridColumn: "16", gridRow: "2" }}
+            />
+            <TilesStyled className='top-edge'
+                style={{ gridColumn: "17", gridRow: "2" }}
+            />
+            <TilesStyled className='top-edge'
+                style={{ gridColumn: "18", gridRow: "2" }}
             />
             <TilesStyled className='top-edge'
                 style={{ gridColumn: "11", gridRow: "8" }}
@@ -433,6 +466,12 @@ const Tiles = () => {
             <TilesStyled className='top-corner2'
                 style={{ gridColumn: "1", gridRow: "2" }}
             />
+            <TilesStyled className='top-corner2'
+                style={{ gridColumn: "13", gridRow: "2" }}
+            />
+            <TilesStyled className='top-corner'
+                style={{ gridColumn: "19", gridRow: "2" }}
+            />
 
             {/* ---------------------bottom-corner2-------------------- */}
             <TilesStyled className='bottom-corner'
@@ -441,10 +480,18 @@ const Tiles = () => {
             <TilesStyled className='bottom-corner'
                 style={{ gridColumn: "6", gridRow: "13" }}
             />
+            <TilesStyled className='bottom-corner'
+                style={{ gridColumn: "13", gridRow: "8" }}
+            />
             <TilesStyled className='bottom-corner2'
                 style={{ gridColumn: "19", gridRow: "13" }}
             />
-
+            <TilesStyled className='bottom-corner2'
+                style={{ gridColumn: "19", gridRow: "13" }}
+            />
+            <TilesStyled className='bottom-corner2'
+                style={{ gridColumn: "13", gridRow: "8" }}
+            />
         </>
     )
 }

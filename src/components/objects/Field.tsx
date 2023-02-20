@@ -20,7 +20,7 @@ const VacantlandImg = styled.img`
 const Field = () => {
     return (
         <FieldStyled>
-            <VacantlandImg src="/assets/images/land/crops.png" />
+            <VacantlandImg src="/assets/images/land/soil/planted.png" />
         </FieldStyled>
     )
 }
