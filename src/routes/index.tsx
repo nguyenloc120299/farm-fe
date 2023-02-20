@@ -1,4 +1,4 @@
-import Test from "pages/Test/Test";
+import Test from "dapp/Test/Test";
 import { useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -22,7 +22,7 @@ const Routes = () => {
     <div>
       <Switch>
         <PublicRoute path={"/test"} component={Test} />
-        <PrivateRoute path={"/profile"} component={CTest} />
+        <PrivateRoute path={"/"} component={CTest} />
       </Switch>
     </div>
   );
