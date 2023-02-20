@@ -3,11 +3,10 @@ import Land from './Land'
 
 const Farm = () => {
     return (
-        <Area>
-            <FarmStyled>
-                <Land />
-            </FarmStyled>
-        </Area>
+        <FarmStyled>
+            <Land />
+        </FarmStyled>
+
     )
 }
 
