@@ -44,6 +44,10 @@ const TilesStyled = styled(DivStyled)`
     &.top-corner{
         background: url("/assets/images/land/dirt/top-corner.png");
     }
+    &.bridge{
+        background: url("/assets/images/ui/bridge.png");
+        transform: scale(1.5);
+    }
 `
 const Tiles = () => {
     return (
@@ -156,6 +160,15 @@ const Tiles = () => {
                 style={{ gridColumn: "13", gridRow: "9" }}
             />
             <TilesStyled className='wood-start'
+                style={{ gridColumn: "14", gridRow: "9" }}
+            />
+            <TilesStyled className='wood-start'
+                style={{ gridColumn: "12", gridRow: "9" }}
+            />
+            <TilesStyled className='wood-start'
+                style={{ gridColumn: "11", gridRow: "9" }}
+            />
+            <TilesStyled className='wood-start'
                 style={{ gridColumn: "15", gridRow: "9" }}
             />
             {/* ----------wood-line------------- */}
@@ -263,6 +276,7 @@ const Tiles = () => {
             <TilesStyled className='top-edge'
                 style={{ gridColumn: "12", gridRow: "2" }}
             />
+
             <TilesStyled className='top-edge'
                 style={{ gridColumn: "14", gridRow: "2" }}
             />
@@ -399,12 +413,12 @@ const Tiles = () => {
             <TilesStyled className='left-edge'
                 style={{ gridColumn: "13", gridRow: "4" }}
             />
-            <TilesStyled className='left-edge'
+            {/* <TilesStyled className='left-edge'
                 style={{ gridColumn: "13", gridRow: "5" }}
             />
             <TilesStyled className='left-edge'
                 style={{ gridColumn: "13", gridRow: "6" }}
-            />
+            />*/}
             <TilesStyled className='left-edge'
                 style={{ gridColumn: "13", gridRow: "7" }}
             />
@@ -449,12 +463,12 @@ const Tiles = () => {
             <TilesStyled className='right-edge'
                 style={{ gridColumn: "13", gridRow: "4" }}
             />
-            <TilesStyled className='right-edge'
+            {/* <TilesStyled className='right-edge'
                 style={{ gridColumn: "13", gridRow: "5" }}
-            />
-            <TilesStyled className='right-edge'
+            /> */}
+            {/* <TilesStyled className='right-edge'
                 style={{ gridColumn: "13", gridRow: "6" }}
-            />
+            /> */}
             <TilesStyled className='right-edge'
                 style={{ gridColumn: "13", gridRow: "7" }}
             />
@@ -472,7 +486,9 @@ const Tiles = () => {
             <TilesStyled className='top-corner'
                 style={{ gridColumn: "19", gridRow: "2" }}
             />
-
+            <TilesStyled className='top-corner'
+                style={{ gridColumn: "13", gridRow: "2" }}
+            />
             {/* ---------------------bottom-corner2-------------------- */}
             <TilesStyled className='bottom-corner'
                 style={{ gridColumn: "1", gridRow: "8" }}
@@ -491,6 +507,13 @@ const Tiles = () => {
             />
             <TilesStyled className='bottom-corner2'
                 style={{ gridColumn: "13", gridRow: "8" }}
+            />
+
+            <TilesStyled className='bridge'
+                style={{ gridColumn: "13", gridRow: "5" }}
+            />
+            <TilesStyled className='bridge'
+                style={{ gridColumn: "13", gridRow: "6" }}
             />
         </>
     )
