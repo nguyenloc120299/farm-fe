@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+- Farm seed : Corn,Carot,cabbage(lv2)
+- Animal: Chicken ,bò(lv3)
+- Tree : Apple tree(lv2)
+- Mineral : Coal,Iron,Silver,Gold(lv3)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-- Nhà Chính : 3 lv
+lv2 : 100 gỗ + 100 coal + 250iron + 50 000xu
+lv3 : 200 gỗ + 150iron + 300 silver + 70 000xu
 
-## Available Scripts
+Tree mỗi tree = 150 000 xu mỗi giờ thu hoạch 200 xu _ 24h _ 30d = 144 000
 
-In the project directory, you can run:
+Corn mua 2 xu thu 5 xu mỗi 5p=> 3xu _ 12p _ 24h _30d=25920
 
-### `npm start`
+Carot mua 30 xu thu 85xu mỗi 1h =>55xu _ 24h _ 30d=39600
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Cabbage mua 100xu thu 375xu mỗi 4h=> 275 _ 6 lần/4h \*30=49500
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1 ô đất = 20000 xu \* 15= 300 000
 
-### `npm test`
+1 gold = 1USDT thu mỗi 1d/lần
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Chicken 20 000 xu 1h thu 250xu trong 3 ngày => 450 * 24 *3 = 32400 => lời 12400 \* 10= 124000
 
-### `npm run build`
+1000 xu = 1000 vnđ = 0.1 USDT
+=> 1 USDT = 10 000xu
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Coal 4h thu hoạch 5 => 5*6 =30 
+Iron =>30
+Silver => 30
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Iron => 1d + 10000 (lv1)
+Silver => 3d +30000(lv2)
+Gold => 15d + 50000(lv3)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1 người giới thiệu vào chơi game sẽ đc 5000 xu + 1 carot
 
-### `npm run eject`
+Giới thiệu 5 người => 1000xu + 10 carot  + 3 ô đất (đk 5 người nhà lên lv2 hoăc nap it nhất 5 USDT)
+Giới thiệu 10 người => 5000 xu + 1 gà + 5 ô đất
+Giới thiệu trên 20 người => 1 tree + 5 ô đất + 10% lợi nhuận thu được từ thu hoạch nông trại 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Nạp lần đầu 5USDT => 3 ô đất + 70 000xu + 1 gà + 500 corn + 50 carot 

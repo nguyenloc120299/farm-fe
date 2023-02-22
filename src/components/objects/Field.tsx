@@ -1,7 +1,8 @@
+import React from "react";
 import styled from "styled-components"
 interface Props {
-  onPlant: (landIndex: number) => void;
-  landIndex:number;
+  onPlant?: (landIndex: number) => void;
+  landIndex?:number;
 }
 const FieldStyled = styled.div`
     height: 100%;
@@ -20,7 +21,7 @@ const VacantlandImg = styled.img`
     object-fit:cover;
     transform: scale(1);
 `
-const Field = () => {
+const Field: React.FC<Props> = ({onPlant}) => {
     return (
         <FieldStyled>
             <VacantlandImg src="/assets/images/land/farm-area.png" />
