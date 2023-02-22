@@ -43,7 +43,7 @@ export const PLANTS: PlantItem[] = [
   {
     plant: PlantOre.Paddy,
     name: "Paddy Plant",
-    image: "",
+    image: "/assets/images/plant/carot_avt.png",
     buyPrice: 0.02,
     sellPrice: 0.032,
     landRequired: 1,
@@ -52,7 +52,7 @@ export const PLANTS: PlantItem[] = [
   {
     plant: PlantOre.Corn,
     name: "Corn plant",
-    image: "",
+    image: "/assets/images/plant/corn_avt.png",
     buyPrice: 0.12,
     sellPrice: 0.24,
     landRequired: 1,
