@@ -20,12 +20,12 @@ const VacantlandImg = styled.img`
     object-fit:cover;
     transform: scale(1);
 `
-const Field: React.FC<Props> = ({ onPlant, landIndex }) => {
-  return (
-    <FieldStyled onClick={()=>onPlant(landIndex)}>
-      <VacantlandImg src="/assets/images/land/soil/planted.png" />
-    </FieldStyled>
-  );
-};
+const Field = () => {
+    return (
+        <FieldStyled>
+            <VacantlandImg src="/assets/images/land/farm-area.png" />
+        </FieldStyled>
+    )
+}
 
 export default Field

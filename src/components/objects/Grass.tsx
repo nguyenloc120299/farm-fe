@@ -7,7 +7,7 @@ interface PropsType {
     row?: number;
 }
 const GrassStyled = styled(DivStyled)`
-    background: url("/assets/images/land/grass/13.png");
+    background: url("/assets/images/land/grass/grass-004.png");
 `
 const Grass: React.FC<PropsType> = ({ children, column, row }) => {
     return (
