@@ -1,6 +1,7 @@
 import { DivStyled } from 'dapp/styles'
 import React from 'react'
 import styled from 'styled-components'
+import Grass from './Grass'
 const TilesStyled = styled(DivStyled)`
     &.wood-start{
         background: url("/assets/images/ui/assets/wood-start.png");
@@ -375,7 +376,7 @@ const Tiles = () => {
                 style={{ gridColumn: "14", gridRow: "8" }}
             />
             {/* ------------left-edge------------ */}
-
+            {/* 
             <TilesStyled className='left-edge'
                 style={{ gridColumn: "1", gridRow: "3" }}
             />
@@ -394,19 +395,19 @@ const Tiles = () => {
 
             <TilesStyled className='left-edge'
                 style={{ gridColumn: "6", gridRow: "8" }}
-            />
-            <TilesStyled className='left-edge'
+            /> */}
+            {/* <TilesStyled className='left-edge'
                 style={{ gridColumn: "6", gridRow: "9" }}
-            />
-            <TilesStyled className='left-edge'
+            /> */}
+            {/* <TilesStyled className='left-edge'
                 style={{ gridColumn: "6", gridRow: "10" }}
-            />
-            <TilesStyled className='left-edge'
+            /> */}
+            {/* <TilesStyled className='left-edge'
                 style={{ gridColumn: "6", gridRow: "11" }}
-            />
-            <TilesStyled className='left-edge'
+            /> */}
+            {/* <TilesStyled className='left-edge'
                 style={{ gridColumn: "6", gridRow: "12" }}
-            />
+            /> */}
             <TilesStyled className='left-edge'
                 style={{ gridColumn: "13", gridRow: "3" }}
             />
@@ -427,7 +428,7 @@ const Tiles = () => {
             />
             {/* -----------right-edge----------------------- */}
 
-            <TilesStyled className='right-edge'
+            {/* <TilesStyled className='right-edge'
                 style={{ gridColumn: "19    ", gridRow: "3" }}
             />
             <TilesStyled className='right-edge'
@@ -450,13 +451,13 @@ const Tiles = () => {
             />
             <TilesStyled className='right-edge'
                 style={{ gridColumn: "19    ", gridRow: "10" }}
-            />
-            <TilesStyled className='right-edge'
+            /> */}
+            {/* <TilesStyled className='right-edge'
                 style={{ gridColumn: "19    ", gridRow: "11" }}
             />
             <TilesStyled className='right-edge'
                 style={{ gridColumn: "19    ", gridRow: "12" }}
-            />
+            /> */}
             <TilesStyled className='right-edge'
                 style={{ gridColumn: "13", gridRow: "3" }}
             />
@@ -477,9 +478,9 @@ const Tiles = () => {
             />
 
             {/* ---------top-corner2----------------------- */}
-            <TilesStyled className='top-corner2'
+            {/* <TilesStyled className='top-corner2'
                 style={{ gridColumn: "1", gridRow: "2" }}
-            />
+            /> */}
             <TilesStyled className='top-corner2'
                 style={{ gridColumn: "13", gridRow: "2" }}
             />
@@ -490,21 +491,21 @@ const Tiles = () => {
                 style={{ gridColumn: "13", gridRow: "2" }}
             />
             {/* ---------------------bottom-corner2-------------------- */}
-            <TilesStyled className='bottom-corner'
+            {/* <TilesStyled className='bottom-corner'
                 style={{ gridColumn: "1", gridRow: "8" }}
-            />
-            <TilesStyled className='bottom-corner'
+            /> */}
+            {/* <TilesStyled className='bottom-corner'
                 style={{ gridColumn: "6", gridRow: "13" }}
-            />
+            /> */}
             <TilesStyled className='bottom-corner'
                 style={{ gridColumn: "13", gridRow: "8" }}
             />
-            <TilesStyled className='bottom-corner2'
+            {/* <TilesStyled className='bottom-corner2'
                 style={{ gridColumn: "19", gridRow: "13" }}
-            />
-            <TilesStyled className='bottom-corner2'
+            /> */}
+            {/* <TilesStyled className='bottom-corner2'
                 style={{ gridColumn: "19", gridRow: "13" }}
-            />
+            /> */}
             <TilesStyled className='bottom-corner2'
                 style={{ gridColumn: "13", gridRow: "8" }}
             />
@@ -515,6 +516,126 @@ const Tiles = () => {
             <TilesStyled className='bridge'
                 style={{ gridColumn: "13", gridRow: "6" }}
             />
+            <Grass row={8} column={2}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={8} column={3}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={8} column={4}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={8} column={5}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={8} column={6}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={13} column={8}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={13} column={9}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={13} column={10}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={13} column={11}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={13} column={12}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={13} column={13}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={13} column={14}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={13} column={15}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={13} column={16}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={13} column={17}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={13} column={18}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+            <Grass row={13} column={7}>
+                <img src='/assets/images/land/dirt/edge.png' style={{
+                    width: "100%",
+                    height: "100%",
+
+                }} />
+            </Grass>
+
         </>
     )
 }

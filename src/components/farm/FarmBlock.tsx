@@ -3,9 +3,9 @@ import Grass from "components/objects/Grass";
 import Mark from "components/objects/Mark";
 import React from "react";
 import { LANDS } from "types/Land";
-import { PlantItem, Square } from "types/Plant";
+import { PlantItem, PlantOre, Square } from "types/Plant";
 interface Props {
-  onPlant: (landIndex: number) => void;
+  onPlant: (landIndex: number, plantSelect: PlantOre) => void;
   land: Square[],
 }
 const FarmBlock: React.FC<Props> = ({ onPlant, land }) => {
@@ -18,7 +18,7 @@ const FarmBlock: React.FC<Props> = ({ onPlant, land }) => {
             onPlant={onPlant}
             landIndex={item.id}
             land={land}
-            landItem={item}
+            landItem={land[index]}
           />
         </Grass>
       ))}

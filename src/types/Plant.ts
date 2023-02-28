@@ -42,7 +42,7 @@ export interface StagePlant {
 export const PLANTS: PlantItem[] = [
   {
     plant: PlantOre.Paddy,
-    name: "Paddy Plant",
+    name: "Paddy",
     image: "/assets/images/plant/carot_avt.png",
     buyPrice: 0.02,
     sellPrice: 0.032,
@@ -51,7 +51,7 @@ export const PLANTS: PlantItem[] = [
   },
   {
     plant: PlantOre.Corn,
-    name: "Corn plant",
+    name: "Corn",
     image: "/assets/images/plant/corn_avt.png",
     buyPrice: 0.12,
     sellPrice: 0.24,

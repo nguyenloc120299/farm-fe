@@ -1,24 +1,53 @@
+import Item from "antd/es/list/Item";
 import Popover from "antd/es/popover";
 import { DataContext } from "context/GlobalContext";
 import React, { useContext, useState } from "react";
 import styled from "styled-components"
 import { LandItem } from "types/Land";
-import { PLANTS, Square } from "types/Plant";
+import { PlantOre, PLANTS, Square } from "types/Plant";
 interface Props {
-    onPlant: (landIndex: number) => void;
+    onPlant: (landIndex: number, plantSelect: PlantOre) => void;
     landIndex: number;
     land: Square[],
-    landItem: LandItem
+    landItem: LandItem | any
 }
 
 const Field: React.FC<Props> = ({ onPlant, land, landItem, landIndex }) => {
     const [openPopOver, setPopOver] = useState<boolean>(false)
+    const [selectItem, setlectItem] = useState<LandItem>()
     const handleOpenChange = (newOpen: boolean) => {
+
         setPopOver(newOpen);
     };
+
     const getPopupContainer = (triggerNode: HTMLElement) => {
         return triggerNode.parentNode as HTMLElement;
     };
+    const handleSelectPlant = (item: any) => {
+        onPlant(landIndex, item.plant)
+        setlectItem(item)
+    }
+    const plant = PLANTS.find(item => item.plant === landItem.plant)
+    const renderSeeding = () => {
+        console.log(plant);
+
+        if (plant?.plant === PlantOre.Paddy)
+            return (
+                <div
+                    style={{
+                        position: 'absolute',
+                        top: "50%",
+                        left: "50%",
+                        cursor: "pointer",
+                        zIndex: 9,
+                        transform: 'translate(-50%,-50%)'
+                    }}
+                >
+                    <img src="/assets/images/plant/carotseeding.png" style={{ transform: 'scale(1.5)' }} />
+                </div>
+            )
+    }
+
     return (
         <FieldStyled>
             <PoppOverStyled
@@ -27,7 +56,7 @@ const Field: React.FC<Props> = ({ onPlant, land, landItem, landIndex }) => {
                     <div className="plant-list">
                         {
                             PLANTS.map((item, index) => (
-                                <div className="item-plant" key={index}>
+                                <div className="item-plant" key={index} onClick={() => handleSelectPlant(item)}>
                                     <div style={{
 
                                         display: 'flex',
@@ -39,7 +68,7 @@ const Field: React.FC<Props> = ({ onPlant, land, landItem, landIndex }) => {
 
                                         }} />
                                     </div>
-                                    <div>
+                                    <div style={{ fontSize: "10px" }}>
                                         {
                                             item.name
                                         }
@@ -52,11 +81,14 @@ const Field: React.FC<Props> = ({ onPlant, land, landItem, landIndex }) => {
                 title={null}
                 trigger="click"
                 getPopupContainer={getPopupContainer}
-                open={openPopOver}
+                open={landItem.plant === PlantOre.None ? openPopOver : false}
                 onOpenChange={handleOpenChange}
             >
+                {
+                    landItem.plant !== PlantOre.None &&
+                    renderSeeding()
+                }
                 <VacantlandImg src="/assets/images/land/farm-area.png"
-                    onClick={() => onPlant(landIndex)}
                 />
             </PoppOverStyled>
         </FieldStyled>
@@ -74,7 +106,7 @@ const FieldStyled = styled.div`
     cursor: pointer;
     z-index: 9;
 .ant-popover-content{
-    width: 200px;
+    min-width: 200px;
     .ant-popover-inner{
     background: #da7b2e;
     border-style: solid;
@@ -83,7 +115,8 @@ const FieldStyled = styled.div`
     border-radius: 13.125px;
     padding: 5px;
     border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJAgMAAACd/+6DAAAABGdBTUEAALGPC/xhBQAAAAlQTFRFAAAA7qRoGBQlo4eEUgAAAAF0Uk5TAEDm2GYAAAAZSURBVAjXY+BawcCgGsbAMIGxAQODxIHyAIsgB7CF1qipAAAAAElFTkSuQmCC) 22.2222% / 1 / 0 repeat;
-    }
+    font-family: "Press Start 2P", cursive !important; 
+}
     .ant-popover-inner-content{
     /* 125px; */
     padding: 1px;
@@ -116,9 +149,9 @@ const VacantlandImg = styled.img`
     height: 100%;
     cursor: pointer;
     object-fit:cover;
-    transform: scale(1);
+    transform: scale(1.5);
+    position: relative;
 `
 const PoppOverStyled = styled(Popover)`
-
-
+    
 `

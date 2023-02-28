@@ -8,8 +8,7 @@ const Platform = () => {
             <Grass column={2} row={5} />
             <Grass column={2} row={6} />
             <Grass column={2} row={7} />
-            <Grass column={2} row={6} />
-            <Grass column={2} row={7}>
+            <Grass column={2} row={6}>
                 <div
                     style={{
                         height: "100%",
@@ -180,8 +179,8 @@ const Platform = () => {
             {/* <Grass column={13} row={8} /> */}
             {/* <Grass column={13} row={9} /> */}
             <Grass column={13} row={10} />
-            <Grass column={13} row={11} />
-            <Grass column={13} row={12}>
+            <Grass column={13} row={12} />
+            <Grass column={13} row={11}>
                 <div
                     style={{
                         height: "100%",
