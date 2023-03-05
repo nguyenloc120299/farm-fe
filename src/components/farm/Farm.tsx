@@ -6,8 +6,8 @@ import { Action, PlantOre, PLANTS, Square, TransactionPlant } from "types/Plant"
 import Land from "./Land";
 
 const Farm = () => {
-  const context = useContext(DataContext)
-  const dispatch = context?.dispatch
+  const { state } = useContext(DataContext)
+
 
   const [lands, setLands] = useState<Square[]>(
     Array(10).fill({
@@ -20,9 +20,6 @@ const Farm = () => {
   const onPlant = useCallback(async (landIndex: number, plantSelect: PlantOre) => {
     const price = PLANTS.find((item) => item.buyPrice);
     const now = Math.floor(Date.now() / 1000);
-    if (dispatch !== undefined) {
-      dispatch({ type: ACTIONS.TOOGLE_MODAL_SELECTPLANT });
-    }
     const transaction: TransactionPlant = {
       action: Action.Plant,
       plant: plantSelect,

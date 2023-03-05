@@ -4,16 +4,25 @@ import reducers from "./Reducers";
 export interface ContextType {
     state: any
     dispatch: React.Dispatch<any>;
-
 }
-export const DataContext = createContext<ContextType | null>(null);
+export type typeModal = {
+    modalSelectPlant: boolean
+}
+export type typeState = {
+    modal: typeModal
+}
+const initalState: typeState = {
+    modal: {
+        modalSelectPlant: false
+    }
+}
+export const DataContext = createContext<ContextType>({
+    state: initalState,
+    dispatch: () => { }
+});
 
 export const DataProvider = ({ children }: any) => {
-    const initalState = {
-        modal: {
-            modalSelectPlant: false
-        }
-    }
+
     const [state, dispatch] = useReducer(reducers, initalState);
     const toggleModalSelectPlant = () => {
         dispatch({

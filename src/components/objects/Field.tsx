@@ -5,6 +5,7 @@ import React, { useContext, useState } from "react";
 import styled from "styled-components"
 import { LandItem } from "types/Land";
 import { PlantOre, PLANTS, Square } from "types/Plant";
+import Carrot from "./Carrot";
 interface Props {
     onPlant: (landIndex: number, plantSelect: PlantOre) => void;
     landIndex: number;
@@ -13,6 +14,7 @@ interface Props {
 }
 
 const Field: React.FC<Props> = ({ onPlant, land, landItem, landIndex }) => {
+    console.log("🚀 ~ file: Field.tsx:17 ~ landItem:", landItem)
     const [openPopOver, setPopOver] = useState<boolean>(false)
     const [selectItem, setlectItem] = useState<LandItem>()
     const handleOpenChange = (newOpen: boolean) => {
@@ -24,74 +26,74 @@ const Field: React.FC<Props> = ({ onPlant, land, landItem, landIndex }) => {
         return triggerNode.parentNode as HTMLElement;
     };
     const handleSelectPlant = (item: any) => {
+
         onPlant(landIndex, item.plant)
         setlectItem(item)
+        setPopOver(false);
     }
     const plant = PLANTS.find(item => item.plant === landItem.plant)
     const renderSeeding = () => {
-        console.log(plant);
-
-        if (plant?.plant === PlantOre.Paddy)
+        if (plant?.plant === PlantOre.Carrot)
             return (
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: "50%",
-                        left: "50%",
-                        cursor: "pointer",
-                        zIndex: 9,
-                        transform: 'translate(-50%,-50%)'
-                    }}
-                >
-                    <img src="/assets/images/plant/carotseeding.png" style={{ transform: 'scale(1.5)' }} />
-                </div>
+                <Carrot />
+            )
+
+        if (plant?.plant === PlantOre.Corn)
+            return (
+                <Carrot />
             )
     }
 
     return (
-        <FieldStyled>
-            <PoppOverStyled
-                className="custom-popover"
-                content={
-                    <div className="plant-list">
-                        {
-                            PLANTS.map((item, index) => (
-                                <div className="item-plant" key={index} onClick={() => handleSelectPlant(item)}>
-                                    <div style={{
+        <>
+            <FieldStyled>
+                <PoppOverStyled
+                    className="custom-popover"
+                    content={
+                        landItem.plant === PlantOre.None ?
+                            <div className="plant-list">
+                                {
+                                    PLANTS.map((item, index) => (
+                                        <div className="item-plant" key={index} onClick={() => handleSelectPlant(item)}>
+                                            <div style={{
 
-                                        display: 'flex',
-                                        justifyContent: 'center'
-                                    }}>
-                                        <img src={item.image} style={{
-                                            width: "30px",
-                                            height: "30px",
+                                                display: 'flex',
+                                                justifyContent: 'center'
+                                            }}>
+                                                <img src={item.image} style={{
+                                                    width: "30px",
+                                                    height: "30px",
 
-                                        }} />
-                                    </div>
-                                    <div style={{ fontSize: "10px" }}>
-                                        {
-                                            item.name
-                                        }
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
-                }
-                title={null}
-                trigger="click"
-                getPopupContainer={getPopupContainer}
-                open={landItem.plant === PlantOre.None ? openPopOver : false}
-                onOpenChange={handleOpenChange}
-            >
-                {
-                    landItem.plant !== PlantOre.None &&
-                    renderSeeding()
-                }
-                <VacantlandImg src="/assets/images/land/farm-area.png"
-                />
-            </PoppOverStyled>
-        </FieldStyled>
+                                                }} />
+                                            </div>
+                                            <div style={{ fontSize: "10px" }}>
+                                                {
+                                                    item.name
+                                                }
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                            : <div>
+                                -{plant?.buyPrice}
+                            </div>
+                    }
+                    title={null}
+                    trigger="click"
+                    getPopupContainer={getPopupContainer}
+                    open={openPopOver}
+                    onOpenChange={handleOpenChange}
+                >
+                    {
+                        landItem.plant !== PlantOre.None &&
+                        renderSeeding()
+                    }
+                    <VacantlandImg src="/assets/images/land/farm-area.png"
+                    />
+                </PoppOverStyled>
+            </FieldStyled>
+        </>
     )
 }
 
@@ -105,8 +107,8 @@ const FieldStyled = styled.div`
     position: relative;
     cursor: pointer;
     z-index: 9;
-.ant-popover-content{
-    min-width: 200px;
+    .ant-popover-content{
+    min-width: 100px;
     .ant-popover-inner{
     background: #da7b2e;
     border-style: solid;

@@ -1,6 +1,6 @@
 export enum PlantOre {
   None = "0",
-  Paddy = "1",
+  Carrot = "1",
   Corn = "2",
 }
 export enum Action {
@@ -41,7 +41,7 @@ export interface StagePlant {
 
 export const PLANTS: PlantItem[] = [
   {
-    plant: PlantOre.Paddy,
+    plant: PlantOre.Carrot,
     name: "Paddy",
     image: "/assets/images/plant/carot_avt.png",
     buyPrice: 0.02,
